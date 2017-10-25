@@ -5,15 +5,32 @@ $(function() {
     } else {
         $garden.height($garden.width());
     }
-});
-var ball = document.querySelector('.ball');
-var garden = document.querySelector('.garden');
-var output = document.querySelector('.output');
+    if (window.DeviceMotionEvent) {
+        window.addEventListener("devicemotion", motionHandler, false);
+    } else {
+        document.body.innerHTML = "What user agent u r using???";
+    }
 
-var maxX = garden.clientWidth - ball.clientWidth;
-var maxY = garden.clientHeight - ball.clientHeight;
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener("deviceorientation", orientationHandler, false);
+    } else {
+        document.body.innerHTML = "What user agent u r using???";
+    };
+});
+// var ball = document.querySelector('.ball');
+// var garden = document.querySelector('.garden');
+// var output = document.querySelector('.output');
+
+// var maxX = garden.clientWidth - ball.clientWidth;
+// var maxY = garden.clientHeight - ball.clientHeight;
 
 function orientationHandler(event) {
+    var ball = document.querySelector('.ball');
+    var garden = document.querySelector('.garden');
+    var output = document.querySelector('.output');
+
+    var maxX = garden.clientWidth - ball.clientWidth;
+    var maxY = garden.clientHeight - ball.clientHeight;
     var x = event.beta; // In degree in the range [-180,180]
     var y = event.gamma; // In degree in the range [-90,90]
 
@@ -60,17 +77,6 @@ function motionHandler(event) {
     document.getElementById("Rbeta").innerHTML = rotationRate.beta;
     document.getElementById("Rgamma").innerHTML = rotationRate.gamma;
 }
-if (window.DeviceMotionEvent) {
-    window.addEventListener("devicemotion", motionHandler, false);
-} else {
-    document.body.innerHTML = "What user agent u r using???";
-}
-
-if (window.DeviceOrientationEvent) {
-    window.addEventListener("deviceorientation", orientationHandler, false);
-} else {
-    document.body.innerHTML = "What user agent u r using???";
-};
 
 
 // var ball = document.querySelector('.ball');
