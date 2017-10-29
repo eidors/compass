@@ -62,7 +62,7 @@ function orientationHandler(event) {
     document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy;
     var valNeedleAngle = parseInt(event.alpha);
     var $needle = $(".needle");
-    $needle.css("transform", valNeedleAngle);
+    $needle.css("transform", "rotate(" + valNeedleAngle + "deg)");
 }
 
 function motionHandler(event) {
