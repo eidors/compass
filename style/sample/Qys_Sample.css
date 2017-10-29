@@ -55,12 +55,12 @@
     height: 6px;
     margin-top: -3px;
     transform: rotate(19deg);
-    -ms-transform: rotate(9deg);
+    /* -ms-transform: rotate(9deg); */
     /* Internet Explorer */
-    -moz-transform: rotate(9deg);
+    /* -moz-transform: rotate(9deg); */
     /* Firefox */
-    -webkit-transform: rotate(9deg);
+    /* -webkit-transform: rotate(9deg); */
     /* Safari 和 Chrome */
-    -o-transform: rotate(9deg);
+    /* -o-transform: rotate(9deg); */
     /* Opera */
 }

@@ -60,6 +60,9 @@ function orientationHandler(event) {
     document.getElementById("gamma").innerHTML = y;
     document.getElementById("heading").innerHTML = event.webkitCompassHeading;
     document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy;
+
+    $needle = $(".needle");
+    $needle.css("transform", event.alpha);
 }
 
 function motionHandler(event) {
