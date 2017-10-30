@@ -73,28 +73,28 @@ function orientationHandler(event) {
 
     switch (valOrientationNum) {
         case 0:
-            $orientation.value("北");
+            $orientation.text("北");
             break;
         case 1:
-            $orientation.value("东北");
+            $orientation.text("东北");
             break;
         case 2:
-            $orientation.value("东");
+            $orientation.text("东");
             break;
         case 3:
-            $orientation.value("东南");
+            $orientation.text("东南");
             break;
         case 4:
-            $orientation.value("南");
+            $orientation.text("南");
             break;
         case 5:
-            $orientation.value("西南");
+            $orientation.text("西南");
             break;
         case 6:
-            $orientation.value("西");
+            $orientation.text("西");
             break;
         case 7:
-            $orientation.value("西北");
+            $orientation.text("西北");
             break;
     }
 }
