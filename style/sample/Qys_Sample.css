@@ -64,3 +64,40 @@
     /* -o-transform: rotate(9deg); */
     /* Opera */
 }
+
+#orientation {
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    margin-left: -5%;
+    width: 80%;
+    margin-left: -40%;
+}
+
+@media (min-width: 768px) {
+    #orientation {
+        width: 64%;
+        margin-left: -32%;
+    }
+}
+
+@media (min-width: 768px) {
+    #orientation {
+        width: 48%;
+        margin-left: -24%;
+    }
+}
+
+@media (min-width: 992px) {
+    #orientation {
+        width: 32%;
+        margin-left: -16%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #orientation {
+        width: 16%;
+        margin-left: -8%;
+    }
+}

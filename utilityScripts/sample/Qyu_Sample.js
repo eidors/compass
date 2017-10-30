@@ -55,14 +55,40 @@ function orientationHandler(event) {
     // It center the positioning point to the center of the ball
     ball.style.top = (maxX * x / 180) + "px";
     ball.style.left = (maxY * y / 180) + "px";
-    document.getElementById("alpha").innerHTML = event.alpha;
+
+    var valAlpha = event.alpha;
+
+    document.getElementById("alpha").innerHTML = valAlpha;
     document.getElementById("beta").innerHTML = x;
     document.getElementById("gamma").innerHTML = y;
     document.getElementById("heading").innerHTML = event.webkitCompassHeading;
     document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy;
-    var valNeedleAngle = parseInt(event.alpha);
     var $needle = $(".needle");
+    var $orientation = $("#orientation");
+
+    var valNeedleAngle = parseInt(valAlpha);
+    var valOrientationNum = parseInt(valAlpha / 45);
+
     $needle.css("transform", "rotate(" + valNeedleAngle + "deg)");
+
+    switch (valOrientationNum) {
+        case 0:
+            $orientation.value("北");
+        case 1:
+            $orientation.value("东北");
+        case 2:
+            $orientation.value("东");
+        case 3:
+            $orientation.value("东南");
+        case 4:
+            $orientation.value("南");
+        case 5:
+            $orientation.value("西南");
+        case 6:
+            $orientation.value("西");
+        case 7:
+            $orientation.value("西北");
+    }
 }
 
 function motionHandler(event) {
